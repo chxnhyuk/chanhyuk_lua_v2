@@ -1,0 +1,26 @@
+local Junkie = loadstring(game:HttpGet("https://jnkie.com/sdk/library.lua"))()
+Junkie.service = "Chanhyuk"
+Junkie.identifier = "1191721"
+Junkie.provider = "Chanhyuk"
+local KEY = getgenv().JUNKIE_KEY
+
+if not KEY or KEY == "" then
+    warn("[JUNKIE] No key provided.")
+        return
+        end
+
+        local validation = Junkie.check_key(KEY)
+
+        if not validation or not validation.valid then
+            warn(
+                    "[JUNKIE] Key validation failed: "
+                            .. tostring(validation and validation.error or "INVALID")
+                                )
+                                    return
+                                    end
+
+                                    getgenv().SCRIPT_KEY = KEY
+
+                                    loadstring(game:HttpGet
+
+                                    ("https://api.jnkie.com/api/v1/luascripts/public/9afe12acb4658f182490bc87e579a34b2bf85ae3a538901213f52df1f86bc1bc/download"))()
